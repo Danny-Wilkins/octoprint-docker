@@ -11,9 +11,9 @@ A Dockerfile and process to build an Octoprint image and restore from backup, wi
       
       a. If you're building on raspian, you need to run these commands first: 
       
-        ```curl http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb --output libseccomp2_2.5.1-1_armhf.deb```
+        curl http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb --output libseccomp2_2.5.1-1_armhf.deb
       
-        ```sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb```
+        sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb
 7. Now the image is built, but we need to mount the printer USB device to the container. 
   
       a. Disconnect all but one printer and run ```ls /dev/serial/by-path/```  
