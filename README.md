@@ -8,7 +8,13 @@ A Dockerfile and process to build an Octoprint image and restore from backup, wi
 3. (Optional) Place an Octoprint-generated backup zip in the octoprint-docker folder and **rename it to backup.zip**. This will ensure that a working version of the server is up and ready each time a container is launched
 4. ```cd octoprint-docker```
 5. ```sudo docker build -t octoprint_server .```
-6. Now the image is built, but we need to mount the printer USB device to the container. 
+      
+      a. If you're building on raspian, you need to run these commands first: 
+      
+        ```curl http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb --output libseccomp2_2.5.1-1_armhf.deb```
+      
+        ```sudo dpkg -i libseccomp2_2.5.1-1_armhf.deb```
+7. Now the image is built, but we need to mount the printer USB device to the container. 
   
       a. Disconnect all but one printer and run ```ls /dev/serial/by-path/```  
       
