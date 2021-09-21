@@ -15,5 +15,5 @@ A Dockerfile and process to build an Octoprint image and restore from backup, wi
   d. Reboot or run ```sudo udevadm control --reload-rules && sudo udevadm trigger```
   e. Repeat for as many printers as you would like to connect
 7. You're ready to run your containers! For each printer, run this command: ```sudo docker run -d -p <port>:5000 --device=/dev/<your-desired-device-name>:/dev/ttyACM0 octoprint_server```
-  a. Note: Each printer needs its own <port>, I recommend starting with 8080 and going up by one for each new printer
-8. Your Octoprint UIs should be accessible at <server IP>:<port>!
+  a. Note: Each printer needs its own ```<port>```, I recommend starting with 8080 and going up by one for each new printer
+8. Your Octoprint UIs should be accessible at ```<server IP>:<port>```!
